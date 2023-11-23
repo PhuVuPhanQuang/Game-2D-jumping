@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EndMenu : MonoBehaviour
 {
@@ -13,16 +14,8 @@ public class EndMenu : MonoBehaviour
         quitButton = quit.GetComponent<Button>();
     }
 
-    /*public void Quit()
-    {
-         Application.Quit();
-    }*/
     void Update()
     {
-        //if ((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    quitButton.onClick.Invoke();
-        //}
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             QuitApp();
@@ -35,5 +28,10 @@ public class EndMenu : MonoBehaviour
             UnityEditor.EditorApplication.isPlaying = false;
         #endif
             Application.Quit();
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("Level 1");
     }
 }

@@ -43,6 +43,13 @@ public class PlayerLife : MonoBehaviour
     /// </summary>
     private void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+          SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    void Update()
+    {
+        if (gameObject.transform.position.y <= -30)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
